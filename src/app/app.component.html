@@ -34,7 +34,19 @@
 			 *ngFor="let logItem of log; let i = index"
 			 [ngStyle]="{backgroundColor: i >= 4 ? 'blue' : 'transparent'}"
 			 [ngClass]="{'white-text': i >= 4}">{{ logItem }}</div>
+			 <hr>
+			 
+		</div>
+	</div>
+	<hr>
+	<app-cockpit
+	 (serverCreated)="onServerAdded($event)"
+	 (blueprintCreated)="onBlueprintAdded($event)"></app-cockpit>
+	<div class="row">
+		<div class="col-xs-12">
+			<app-server-element
+			 *ngFor="let serverElement of serverElements"
+			 [svrElement]="serverElement"></app-server-element>
 		</div>
 	</div>
 </div>
-

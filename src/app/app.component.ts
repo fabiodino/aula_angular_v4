@@ -10,9 +10,29 @@ export class AppComponent {
   showSecret = false;
   log = [];
 
+  serverElements = [{type: 'server', name: 'Testserver', content: 'Just a test!'}];
+
+
   onToggleDetails() {
-  	this.showSecret = !this.showSecret;
-  	//this.log.push(this.log.length + 1);
-  	this.log.push(Date());
+    this.showSecret = !this.showSecret;
+    //this.log.push(this.log.length + 1);
+    this.log.push(Date());
   }
+
+  onServerAdded(serverData: {serverName: string, serverContent: string}) {
+  this.serverElements.push({
+    type: 'server',
+    name: serverData.serverName,
+    content: serverData.serverContent
+    });
+  }
+
+  onBlueprintAdded(blueprintData: {serverName: string, serverContent: string}) {
+    this.serverElements.push({
+      type: 'blueprint',
+      name: blueprintData.serverName,
+      content: blueprintData.serverContent
+    });
+  }
+
 }
