@@ -1,3 +1,20 @@
 .white-text {
 	color: white;
 }
+
+.container {
+	margin-top: 30px;
+}
+
+p {
+	color: green;
+}
+
+.highlight {
+	background-color: yellow;
+	font-weight: bold;
+}
+
+.odd {
+	color: red;
+}
